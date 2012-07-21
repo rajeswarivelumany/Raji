@@ -1,8 +1,7 @@
 Demo::Application.routes.draw do
   resources :name_lists  
-  get "name_lists/index"
-  
-  
+
+  root :to => "name_lists#index"  
   get "samples/hello"
   get "samples/bye"
 
