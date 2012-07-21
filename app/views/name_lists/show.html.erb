@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @name_list.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @name_list.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @name_list.age %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @name_list.gender %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @name_list.dob %>
+</p>
+
+<p>
+  <b>Discription:</b>
+  <%= @name_list.discription %>
+</p>
+
+
+<%= link_to 'Edit', edit_name_list_path(@name_list) %> |
+<%= link_to 'Back', name_lists_path %>

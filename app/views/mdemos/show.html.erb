@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @mdemo.content %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @mdemo.title %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @mdemo.age %>
+</p>
+
+
+<%= link_to 'Edit', edit_mdemo_path(@mdemo) %> |
+<%= link_to 'Back', mdemos_path %>

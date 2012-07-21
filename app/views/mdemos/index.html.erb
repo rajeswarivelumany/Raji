@@ -1,0 +1,27 @@
+<h1>Listing mdemos</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>Title</th>
+    <th>Age</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mdemos.each do |mdemo| %>
+  <tr>
+    <td><%= mdemo.content %></td>
+    <td><%= mdemo.title %></td>
+    <td><%= mdemo.age %></td>
+    <td><%= link_to 'Show', mdemo %></td>
+    <td><%= link_to 'Edit', edit_mdemo_path(mdemo) %></td>
+    <td><%= link_to 'Destroy', mdemo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mdemo', new_mdemo_path %>

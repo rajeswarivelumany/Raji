@@ -1,0 +1,27 @@
+<%= will_filter_tag(@name_lists) %>
+  <%= form_tag('', :id => 'name_lists_form', :method =>"delete") do %>
+<%= will_filter_table_tag(@name_lists, :columns => [
+                                                    [:checkbox, 'name_lists'], 
+                                                    :id, 
+                                                    :name,
+                                                    :age,
+                                                    :gender,
+                                                    {:key =>:dob, :title=> "Date OF Birth"},
+                                                    
+                                                    [:actions, lambda{ |obj|
+                                                       actions = []
+                                                       actions << link_to('show', :action => :show, :id => obj.id)	
+                                                       actions << link_to('edit', :action => :edit, :id => obj.id)	
+                                                       actions << link_to( "Delete", name_list_path(obj.id), :method=>"delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) )	
+                                                       actions.join(' | ').html_safe
+                                                     }, 'padding:3px;width:80px;padding-left:10px;']
+                                                   ]) %>
+  <%= will_filter_actions_bar_tag(@name_lists, [
+                                                ["Delete Selected lists", "
+ 		if (!confirm('Are you sure you want to delete all selected users?')) return;
+ 		document.getElementById('name_lists_form').action = '/name_lists'
+ 		document.getElementById('name_lists_form').submit();	
+        "]
+                                               ]) %>
+
+<% end %>
