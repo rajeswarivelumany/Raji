@@ -7,8 +7,7 @@ gem 'rails', '3.2.6'
 
 #gem 'sqlite3'
 gem 'heroku'
-gem 'pg'
-
+gem'pg'
 gem 'will_filter', "~> 3.1.0" 
 gem 'kaminari'
 # Gems used only for assets and not required
